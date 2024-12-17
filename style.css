@@ -1,0 +1,186 @@
+:root {
+  --ink: #222;
+  --grid-gap: 1rem;
+}
+body {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400; /* Reguläre Stärke */
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; /* Fettere Stärke */
+}
+
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 1250px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+body {
+  padding: 4rem;
+  background: #f0f0f0;
+  color: var(--ink);
+  background-image: url("./assetts/brick-wall-3112420_1920.jpg");
+  background-size: cover;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  line-height: 1.5rem;
+  margin: 0;
+  text-align: justify;
+  column-gap: var(--grid-gap);
+
+  &:not(:last) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+#wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0.2rem 0.2rem 0.5rem #aaa;
+  padding: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: var(--grid-gap);
+  border-width: 3px 0;
+  border-style: solid;
+  border-color: var(--ink);
+  padding-bottom: var(--grid-gap);
+}
+
+header {
+    grid-column: 1 / -1;       /* Über die gesamte Breite des Grids */
+    grid-row: 1 / 2;           /* Erste Zeile im Grid */
+    display: block;            /* Entfernt unnötige Layout-Einschränkungen */
+    text-align: center;        /* Zentriert die Inhalte */
+    width: 100%;               /* Stellt sicher, dass es die volle Breite nimmt */
+  }
+  
+header h1 {
+    margin: 0;                 /* Entfernt Standard-Margen */
+    font-size: 6rem;           /* Beibehaltung der Schriftgröße */
+  }
+header aside {
+    background: var(--ink);
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    margin: 0;                 /* Entfernt mögliche Margen */
+    width: 100%;               /* Sorgt für volle Breite */
+    box-sizing: border-box;    /* Padding zählt zur Gesamtbreite */
+  }
+.subhead{
+text-align: center;
+padding-top: 1vh;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#editorial {
+  grid-column: 1 / 4;
+  grid-row: 2 / 6;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: var(--grid-gap);
+}
+
+#editorial p {
+  column-count: 3;
+}
+
+#side {
+  grid-column: 4 / -1;
+  grid-row: 2 / -2;
+  border-left: 1px solid var(--ink);
+  padding-left: var(--grid-gap);
+}
+
+#subordinate {
+  grid-column: 1 / 4;
+  grid-row: 6 / 7;
+
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#subordinate h3 {
+  grid-column: 1 / span 1;
+}
+
+#subordinate p {
+  grid-column: 2 / span 2;
+}
+
+#bottom {
+  grid-column: 1 / -1;
+  grid-row: 7;
+  grid-gap: var(--grid-gap);
+
+  display: grid;
+  grid-template-columns: 7rem 1fr 1fr;
+}
+
+#bottom img {
+  grid-column: 1 / 2;
+}
+
+#bottom .text {
+  grid-column: 2 / -1;
+  border-top: 1px solid var(--ink);
+  padding-top: var(--grid-gap);
+  p {
+    column-count: 3;
+  }
+}
+article img {
+    width: 100%;         /* Bilder füllen die gesamte Breite des Containers */
+    height: 100%;        /* Anpassung an die Höhe des Containers */
+    object-fit: cover;   /* Stellt sicher, dass das Bild skaliert wird und keine Lücken entstehen */
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+  }
+  article {
+    display: flex;          /* Nutzt flexibles Layout */
+    flex-direction: column; /* Stapelt Inhalte vertikal */
+    justify-content: space-between; /* Verhindert Lücken */
+    overflow: hidden;       /* Verhindert Überlaufen von Inhalten */
+  }
+  
